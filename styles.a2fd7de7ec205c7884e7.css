@@ -3136,14 +3136,24 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   .tree-item {
     display: inline-block;
     margin-top: .7em;
-    padding: 0 10px;
     line-height: 2em;
-    border-radius: 3px;
-    background: #efefef;
     color: #233; }
-    .tree-item.active {
+    .tree-item.active > div {
       background: #9c27b0;
       color: #fff; }
+
+.tree-item > div {
+  padding: 0 10px;
+  background: #efefef;
+  border-radius: 3px; }
+  .tree-item > div:hover {
+    cursor: pointer; }
+
+[data-type="1"]:before {
+  content: 'LComponentView_'; }
+
+[data-type="2"]:before {
+  content: 'LEmbeddedView_'; }
 
 .scheme {
   display: flex;

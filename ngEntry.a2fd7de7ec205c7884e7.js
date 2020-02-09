@@ -80,7 +80,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// __webpack_hash__
-/******/ 	__webpack_require__.h = "cad9f1b8eab0666a0083";
+/******/ 	__webpack_require__.h = "a2fd7de7ec205c7884e7";
 /******/
 /******/ 	// __webpack_chunkname__
 /******/ 	__webpack_require__.cn = "ngEntry";
@@ -27220,6 +27220,11 @@ var TemplateDefinitionBuilder = /** @class */ (function () {
         var tagName = compile_metadata_1.sanitizeIdentifier(template.tagName || '');
         var contextName = "" + this.contextName + (tagName ? '_' + tagName : '') + "_" + templateIndex;
         var templateName = contextName + "_Template";
+        self.sm.templates[templateName] = {
+            context: this.contextName,
+            start: template.startSourceSpan.start.offset,
+            end: template.endSourceSpan.end.offset
+        };
         var parameters = [
             o.literal(templateIndex),
             o.variable(templateName),
